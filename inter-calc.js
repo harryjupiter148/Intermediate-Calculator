@@ -62,20 +62,18 @@ function n2() {
 num2.addEventListener("click", n2);
 
 function n3() {
-  if (
+  if (show2.value !== "") {
+    show.value = show2.value + "\u00F7";
+    show2.value = "";
+  } else if (
     (show.value.length > 0 && show.value.slice(-1) === "\u00F7") ||
     show.value.slice(-1) === "-" ||
     show.value.slice(-1) === "+" ||
-    show.value.slice(-1) === "\u00D7" ||
-    show.value.slice(-1) === "%"
+    show.value.slice(-1) === "\u00D7"
   ) {
     return;
-  }
-  if (show.value === "" && show2.value === "") {
+  } else if (show.value === "" && show2.value === "") {
     return;
-  } else if (show2.value !== "") {
-    show.value = show2.value + "\u00F7";
-    show2.value = "";
   } else {
     show.value += "\u00F7";
   }
@@ -123,20 +121,18 @@ function n6() {
 num6.addEventListener("click", n6);
 
 function n7() {
-  if (
+  if (show2.value !== "") {
+    show.value = show2.value + "\u00D7";
+    show2.value = "";
+  } else if (
     (show.value.length > 0 && show.value.slice(-1) === "\u00F7") ||
     show.value.slice(-1) === "-" ||
     show.value.slice(-1) === "+" ||
-    show.value.slice(-1) === "\u00D7" ||
-    show.value.slice(-1) === "%"
+    show.value.slice(-1) === "\u00D7"
   ) {
     return;
-  }
-  if (show.value === "" && show2.value === "") {
+  } else if (show.value === "" && show2.value === "") {
     return;
-  } else if (show2.value !== "") {
-    show.value = show2.value + "\u00D7";
-    show2.value = "";
   } else {
     show.value += "\u00D7";
   }
@@ -186,18 +182,16 @@ function n10() {
 num10.addEventListener("click", n10);
 
 function n11() {
-  if (
-    (show.value.length > 0 && show.value.slice(-2) === "\u00F7-") ||
-    show.value.slice(-2) === "--" ||
-    show.value.slice(-2) === "+-" ||
-    show.value.slice(-2) === "\u00D7-" ||
-    show.value.slice(-1) === "%"
-  ) {
-    return;
-  }
   if (show2.value !== "") {
     show.value = show2.value + "-";
     show2.value = "";
+  } else if (
+    (show.value.length > 0 && show.value.slice(-2) === "\u00F7-") ||
+    show.value.slice(-2) === "--" ||
+    show.value.slice(-2) === "+-" ||
+    show.value.slice(-2) === "\u00D7-"
+  ) {
+    return;
   } else {
     show.value += "-";
   }
@@ -245,18 +239,16 @@ function n14() {
 num14.addEventListener("click", n14);
 
 function n15() {
-  if (
-    (show.value.length > 0 && show.value.slice(-2) === "\u00F7+") ||
-    show.value.slice(-2) === "-+" ||
-    show.value.slice(-2) === "++" ||
-    show.value.slice(-2) === "\u00D7+" ||
-    show.value.slice(-1) === "%"
-  ) {
-    return;
-  }
   if (show2.value !== "") {
     show.value = show2.value + "+";
     show2.value = "";
+  } else if (
+    (show.value.length > 0 && show.value.slice(-2) === "\u00F7+") ||
+    show.value.slice(-2) === "-+" ||
+    show.value.slice(-2) === "++" ||
+    show.value.slice(-2) === "\u00D7+"
+  ) {
+    return;
   } else {
     show.value += "+";
   }
@@ -560,8 +552,7 @@ show.addEventListener("keydown", function (e) {
     show.value = show2.value + "\u00F7";
     show2.value = "";
   } else if (
-    (show.value.length > 0 && show.value.slice(-1) === "%" && e.key === "/") ||
-    (show.value.slice(-1) === "+" && e.key === "/") ||
+    (show.value.length > 0 && show.value.slice(-1) === "+" && e.key === "/") ||
     (show.value.slice(-1) === "-" && e.key === "/") ||
     (show.value.slice(-1) === "\u00D7" && e.key === "/") ||
     (show.value.slice(-1) === "\u00F7" && e.key === "/")
@@ -579,8 +570,7 @@ show.addEventListener("keydown", function (e) {
     show.value = show2.value + "\u00D7";
     show2.value = "";
   } else if (
-    (show.value.length > 0 && show.value.slice(-1) === "%" && e.key === "*") ||
-    (show.value.slice(-1) === "+" && e.key === "*") ||
+    (show.value.length > 0 && show.value.slice(-1) === "+" && e.key === "*") ||
     (show.value.slice(-1) === "-" && e.key === "*") ||
     (show.value.slice(-1) === "\u00D7" && e.key === "*") ||
     (show.value.slice(-1) === "\u00F7" && e.key === "*")
@@ -595,9 +585,8 @@ show.addEventListener("keydown", function (e) {
     show.value = show2.value + "";
     show2.value = "";
   } else if (
-    (show.value.length > 0 && show.value.slice(-1) === "%" && e.key === "-") ||
-    (show.value.slice(-2) === "+-" && e.key === "-") ||
-    (show.value.slice(-2) === "--" && e.key === "-") ||
+    (show.value.length > 0 && show.value.slice(-2) === "+-" && e.key === "-") ||
+    (show.value.slice(-1) === "-" && e.key === "-") ||
     (show.value.slice(-2) === "\u00D7-" && e.key === "-") ||
     (show.value.slice(-1) === "\u00F7-" && e.key === "-")
   ) {
@@ -608,8 +597,7 @@ show.addEventListener("keydown", function (e) {
     show.value = show2.value + "";
     show2.value = "";
   } else if (
-    (show.value.length > 0 && show.value.slice(-1) === "%" && e.key === "+") ||
-    (show.value.slice(-2) === "++" && e.key === "+") ||
+    (show.value.length > 0 && show.value.slice(-1) === "+" && e.key === "+") ||
     (show.value.slice(-2) === "-+" && e.key === "+") ||
     (show.value.slice(-2) === "\u00D7+" && e.key === "+") ||
     (show.value.slice(-2) === "\u00F7+" && e.key === "+")
