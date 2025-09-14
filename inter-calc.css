@@ -210,6 +210,20 @@ body {
 @media screen and (max-width: 425px) {
   body {
     #calc {
+      #show {
+        background: transparent;
+      }
+
+      #show2 {
+        background: transparent;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    #calc {
       border-radius: 15px;
       padding: 20px 15px;
       gap: 7px;
