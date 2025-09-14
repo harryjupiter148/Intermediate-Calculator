@@ -206,3 +206,23 @@ body {
     }
   }
 }
+
+@media screen and (max-width: 425px) {
+  body {
+    #calc {
+      border-radius: 15px;
+      padding: 20px 15px;
+      gap: 7px;
+
+      #show {
+        background: transparent;
+        font-size: 15px;
+      }
+
+      #show2 {
+        background: transparent;
+        font-size: 24px;
+      }
+    }
+  }
+}
